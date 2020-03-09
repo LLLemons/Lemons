@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="73179626-e245-46b3-87bc-6146f999738e" name="Default Changelist" comment="" />
+    <list default="true" id="73179626-e245-46b3-87bc-6146f999738e" name="Default Changelist" comment="add">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BaseForm/FormWidthRow.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/BaseForm/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BaseTable/AsyncFormTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BaseTable/AsyncFormTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BaseTable/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BaseTable/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="LLLemons &lt;1396523534@qq.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
@@ -19,8 +35,9 @@
   <component name="PropertiesComponent">
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../company/web-saas-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -29,9 +46,9 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="settings.nodejs" />
-    <property name="ts.external.directory.path" value="D:\Program Files\WebStorm 2019.3.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="D:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration default="true" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -42,6 +59,14 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="install" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="install" />
+      <node-interpreter value="project" />
+      <package-manager value="yarn" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -49,9 +74,26 @@
         <script value="start" />
       </scripts>
       <node-interpreter value="project" />
+      <package-manager value="yarn" />
       <envs />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="npm.install" />
+      <item itemvalue="npm.start" />
+    </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -64,11 +106,22 @@
       <option name="presentableId" value="Default" />
       <updated>1583640607972</updated>
       <workItem from="1583640611643" duration="25571000" />
+      <workItem from="1583726475501" duration="961000" />
+      <workItem from="1583727627184" duration="16893000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/node_modules/umi-utils/src/index.d.ts" />
+      </list>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add" />
+    <option name="LAST_COMMIT_MESSAGE" value="add" />
   </component>
   <component name="WindowStateProjectService">
     <state x="249" y="44" key="#ESLint" timestamp="1583644627873">
@@ -87,14 +140,27 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="253" y="222" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/0.0.1366.728@0.0.1366.728" timestamp="1583648077329" />
-    <state x="124" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583641320507">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="318" y="290" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583728597776">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="124" y="37" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1583641320507" />
+    <state x="318" y="290" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583728597776" />
+    <state x="693" y="321" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583731219510">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="693" y="321" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583731219510" />
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583644519505">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="110" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1583644519505" />
+    <state x="657" y="215" key="#install" timestamp="1583726739295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="657" y="215" key="#install/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583726739295" />
+    <state x="560" y="112" key="CommitChangelistDialog2" timestamp="1583749121485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="560" y="112" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583749121485" />
     <state x="292" y="94" width="689" height="634" key="EditFileWatcherDialog" timestamp="1583656867799">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -103,29 +169,42 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="460" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583671089931" />
-    <state width="1345" height="179" key="GridCell.Tab.0.bottom" timestamp="1583656465287">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1898" height="277" key="GridCell.Tab.0.bottom" timestamp="1583730431948">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1583656465287" />
-    <state width="1345" height="179" key="GridCell.Tab.0.center" timestamp="1583656465287">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1898" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583730431948" />
+    <state width="1898" height="277" key="GridCell.Tab.0.center" timestamp="1583730431948">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1583656465287" />
-    <state width="1345" height="179" key="GridCell.Tab.0.left" timestamp="1583656465287">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1898" height="277" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583730431948" />
+    <state width="1898" height="277" key="GridCell.Tab.0.left" timestamp="1583730431948">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1583656465287" />
-    <state width="1345" height="179" key="GridCell.Tab.0.right" timestamp="1583656465287">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1898" height="277" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583730431948" />
+    <state width="1898" height="277" key="GridCell.Tab.0.right" timestamp="1583730431948">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1345" height="179" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1583656465287" />
+    <state width="1898" height="277" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583730431948" />
     <state x="38" y="11" key="SettingsEditor" timestamp="1583652031440">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="38" y="11" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1583652031440" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1583659549787">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state x="46" y="332" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583738795322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="46" y="332" width="1736" height="856" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583738795322" />
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1583738871021">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583738871021" />
+    <state x="486" y="70" width="945" height="969" key="search.everywhere.popup" timestamp="1583734283105">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1583659549787" />
+    <state x="486" y="70" width="945" height="969" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1080@0.0.1920.1040" timestamp="1583734283105" />
   </component>
 </project>

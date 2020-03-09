@@ -1,5 +1,5 @@
-import React, { useMemo } from 'react';
-import { Button, Card, Col, Form, Input, Row } from 'antd';
+import React, { CSSProperties, useMemo } from 'react';
+import { Button, Card, Form } from 'antd';
 import { useFormTable } from '@umijs/hooks';
 import { PaginatedParams } from '@umijs/hooks/es/useFormTable';
 import { TablePaginationConfig, TableProps } from 'antd/es/table';
@@ -7,30 +7,31 @@ import { Basic } from '@/types';
 import { PaginatedFormatReturn } from '@umijs/use-request/lib/types';
 import BaseTable from '@/components/BaseTable/index';
 import _ from 'lodash';
-import { FormInstance, FormItemProps } from 'antd/es/form';
-
-declare type RenderChildren = (form: FormInstance) => React.ReactElement | null;
-
-interface FTFormItemProps extends FormItemProps {
-  dom: React.ReactNode;
-}
+import { FormItemProps } from 'antd/es/form';
+import FormWidthRow from '@/components/BaseForm/FormWidthRow';
+import { RowProps } from 'antd/es/row';
+import { ColProps } from 'antd/es/col';
 
 interface FormTableProps<T, F, P> {
   tableConfig: TableProps<T>;
   formConfig: {
-    items: {
-      dom: React.ReactElement | RenderChildren | React.ReactElement[] | null;
-      props: FormItemProps;
-    };
-    form?: FormInstance;
+    formList: {
+      key: string | number;
+      formItemProps: FormItemProps;
+      colProps?: ColProps;
+    }[];
+    rowProps?: RowProps;
+    colProps?: ColProps;
+    formCardStyle?: CSSProperties;
   };
   fetchData: (params: P) => Promise<Basic.BaseResponse<T[]>>;
+  expandContext?: React.ReactNode;
 }
 
 function AsyncFormTable<T extends object = any, F extends object = any, P extends object = any>(
   props: FormTableProps<T, F, P>,
 ) {
-  const { fetchData, tableConfig } = props;
+  const { fetchData, tableConfig, formConfig, expandContext } = props;
   const defaultPagination = useMemo<TablePaginationConfig>(
     () => ({
       total: 0,
@@ -41,7 +42,27 @@ function AsyncFormTable<T extends object = any, F extends object = any, P extend
     }),
     [],
   );
+  const defaultLayout: {
+    rowProps: RowProps;
+    colProps: ColProps;
+  } = {
+    rowProps: {
+      gutter: 24,
+    },
+    colProps: {
+      xs: 24,
+      sm: 12,
+      md: 8,
+      lg: 6,
+      xl: 6,
+      xxl: 6,
+    },
+  };
   const initialPagination = _.mergeWith(defaultPagination, tableConfig.pagination);
+  const initialFormLayout = {
+    rowProps: props.formConfig.rowProps || defaultLayout.rowProps,
+    colProps: props.formConfig.colProps || defaultLayout.colProps,
+  };
   const [form] = Form.useForm();
 
   const getTableData = async (
@@ -72,47 +93,45 @@ function AsyncFormTable<T extends object = any, F extends object = any, P extend
   const { current, pageSize, total } = pagination;
   return (
     <>
-      <Card style={{ marginBottom: '16px' }}>
-        <Form form={form}>
-          <Row gutter={24}>
-            <Col span={8}>
-              <Form.Item label="name" name="name">
-                <Input placeholder="name" />
+      <Card
+        style={{ marginBottom: '16px', overflow: 'hidden' }}
+        bodyStyle={{ paddingBottom: '0px' }}
+      >
+        <Form form={form} wrapperCol={{ span: 16 }} labelCol={{ span: 8 }} labelAlign={'right'}>
+          <FormWidthRow
+            form={form}
+            formList={formConfig.formList}
+            key={'formRow'}
+            {...initialFormLayout}
+            fixedRightCol={
+              <Form.Item
+                style={{ display: 'flex', justifyContent: 'flex-end' }}
+                wrapperCol={{ span: 24 }}
+              >
+                <Button type="primary" onClick={submit}>
+                  搜索
+                </Button>
+                <Button onClick={reset} style={{ marginLeft: 16 }}>
+                  重置
+                </Button>
               </Form.Item>
-            </Col>
-            <Col span={8}>
-              <Form.Item label="email" name="email">
-                <Input placeholder="email" />
-              </Form.Item>
-            </Col>
-            <Col span={8}>
-              <Form.Item label="phone" name="phone">
-                <Input placeholder="phone" />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row>
-            <Form.Item style={{ display: 'flex', justifyContent: 'flex-end' }}>
-              <Button type="primary" onClick={submit}>
-                Search
-              </Button>
-              <Button onClick={reset} style={{ marginLeft: 16 }}>
-                Reset
-              </Button>
-            </Form.Item>
-          </Row>
+            }
+          />
         </Form>
       </Card>
-      <BaseTable
-        {...tableConfig}
-        {...tableProps}
-        pagination={{
-          ...initialPagination,
-          current,
-          pageSize: pageSize ?? 0,
-          total,
-        }}
-      />
+      <Card size={'small'}>
+        <BaseTable
+          {...tableConfig}
+          {...tableProps}
+          pagination={{
+            ...initialPagination,
+            current,
+            pageSize: pageSize ?? 0,
+            total,
+          }}
+          expandContext={expandContext}
+        />
+      </Card>
     </>
   );
 }
